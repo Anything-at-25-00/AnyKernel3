@@ -11,11 +11,7 @@ do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
 device.name1=a34x
-device.name2=
-device.name3=
-device.name4=
-device.name5=
-supported.versions=
+supported.versions=14
 supported.patchlevels=
 supported.vendorpatchlevels=
 '; } # end properties
@@ -32,7 +28,8 @@ set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 block=/dev/block/by-name/boot;
 is_slot_device=0;
 ramdisk_compression=auto;
-patch_vbmeta_flag=auto;
+patch_vbmeta_flag=true;
+NO_MAGISK_CHECK=1;
 
 # import functions/variables and setup patching - see for reference (DO NOT REMOVE)
 . tools/ak3-core.sh;
